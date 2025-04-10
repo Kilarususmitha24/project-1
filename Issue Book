@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Issue Book</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #edeafd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    .form-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4b0082;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #800080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background-color: #5a005a;
+    }
+
+    .issue-details {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .issue-details h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .back-btn {
+      margin-top: 10px;
+      background-color: #ccc;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Issue Book</h2>
+    <form onsubmit="return showIssueDetails()">
+      <input type="text" id="member" placeholder="Member ID or Name" required>
+      <input type="text" id="bookTitle" placeholder="Book Title" required>
+      <input type="date" id="issueDate" required>
+
+      <button type="submit">Issue Book</button>
+    </form>
+    <a href="homepage.html">
+      <button class="back-btn">Back to Home</button>
+    </a>
+  </div>
+
+  <div class="issue-details" id="issueInfo" style="display: none;">
+    <h3>Book Issued:</h3>
+    <p><strong>Member:</strong> <span id="outMember"></span></p>
+    <p><strong>Book Title:</strong> <span id="outBookTitle"></span></p>
+    <p><strong>Issue Date:</strong> <span id="outIssueDate"></span></p>
+  </div>
+
+  <script>
+    function showIssueDetails() {
+      const member = document.getElementById("member").value;
+      const bookTitle = document.getElementById("bookTitle").value;
+      const issueDate = document.getElementById("issueDate").value;
+
+      document.getElementById("outMember").innerText = member;
+      document.getElementById("outBookTitle").innerText = bookTitle;
+      document.getElementById("outIssueDate").innerText = issueDate;
+
+      document.getElementById("issueInfo").style.display = "block";
+      return false; // Prevent page reload
+    }
+  </script>
+
+</body>
+</html>
