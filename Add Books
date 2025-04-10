@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Book Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #edeafd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    .form-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4b0082;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #800080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* Apply space to all buttons for consistency */
+}
+
+.back-btn {
+  background-color: purple;
+  margin-top: 15px; /* Add extra space if needed specifically */
+}
+
+    button:hover {
+      background-color: #5a005a;
+    }
+
+    .book-details {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .book-details h3 {
+      margin-top: 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Add Book Details</h2>
+    <form onsubmit="return showBookDetails()">
+      <input type="text" id="title" placeholder="Book Title" required>
+      <input type="text" id="author" placeholder="Author" required>
+      <input type="text" id="isbn" placeholder="ISBN" required>
+      <input type="text" id="category" placeholder="Category" required>
+
+      <button type="submit">Add Book</button>
+    </form>
+<a href="homepage.html">
+      <button class="back-btn">Back to Home</button>
+    </a>
+  </div>
+
+  </div>
+
+  <div class="book-details" id="bookInfo" style="display: none;">
+    <h3>Book Added:</h3>
+    <p><strong>Title:</strong> <span id="outTitle"></span></p>
+    <p><strong>Author:</strong> <span id="outAuthor"></span></p>
+    <p><strong>ISBN:</strong> <span id="outISBN"></span></p>
+    <p><strong>Category:</strong> <span id="outCategory"></span></p>
+  </div>
+
+  <script>
+    function showBookDetails() {
+      // Get form values
+      const title = document.getElementById("title").value;
+      const author = document.getElementById("author").value;
+      const isbn = document.getElementById("isbn").value;
+      const category = document.getElementById("category").value;
+
+      // Show values in output
+      document.getElementById("outTitle").innerText = title;
+      document.getElementById("outAuthor").innerText = author;
+      document.getElementById("outISBN").innerText = isbn;
+      document.getElementById("outCategory").innerText = category;
+
+      document.getElementById("bookInfo").style.display = "block";
+
+      // Prevent form from refreshing the page
+      return false;
+    }
+  </script>
+
+</body>
+</html>
