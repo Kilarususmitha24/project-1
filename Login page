@@ -1,0 +1,89 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e9e7fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      background-color: purple;
+      color: white;
+    }
+
+    .back-btn {
+      background-color: #ddd;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form onsubmit="return login()">
+      <label>Username</label>
+      <input type="text" id="username" required>
+      
+      <label>Password</label>
+      <input type="password" id="password" required>
+
+      <button class="login-btn" type="submit">Login</button>
+      <button class="back-btn" type="button" onclick="history.back()">Back</button>
+    </form>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      // Simple hardcoded credentials for demo
+      if (user === 'admin' && pass === 'admin123') {
+        window.location.href = 'homepage.html'; // Redirect to home page
+        return false; // Prevent form submission
+      } else {
+        alert('Invalid username or password!');
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
