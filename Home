@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Library</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f1e8;
+      margin: 0;
+    }
+    .button-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px; /* 👈 adds space between header and buttons */
+}
+
+    header {
+      background: #3a3a3a;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+    }
+    .features {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .feature-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      width: 30%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .trending-section h2 {
+      margin-top: 0;
+    }
+    .books {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .book-card {
+      background: white;
+      padding: 10px;
+      border-radius: 6px;
+      width: 140px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .book-card img {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 4px;
+    }
+    .library-button {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: left;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      transition: transform 0.2s;
+    }
+    .library-button:hover {
+      transform: translateY(-5px);
+    }
+    .library-button h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .library-button p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .not-in-library {
+      background: #999;
+      color: white;
+    }
+    .checked-out {
+      background: #d9534f;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📚 My Library</h1>
+<nav>
+      <a href="h.html">Home</a>
+      <a href="my-books.html">My Books</a>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Sign Up</a>
+<a href="read-books.html" class="card">
+<a href="reading-goal.html" class="card">
+<a href="reading-log.html" class="card">
+</a>
+
+    </nav>  
+</header>
+
+<div class="button-container">
+  <a class="library-button" href="read-books.html">
+    📖 <h3>Read Books Online</h3>
+    <p>Access thousands of books online anytime.</p>
+  </a>
+
+  <a class="library-button" href="reading-goal.html">
+    📅 <h3>Yearly Reading Goal</h3>
+    <p>Track your reading journey and set goals.</p>
+  </a>
+
+  <a class="library-button" href="reading-log.html">
+    📚 <h3>Favorite Books</h3>
+    <p>Organize your books and keep a reading log.</p>
+  </a>
+  </div>
+
+  <div class="trending-section">
+    <h2>🔥 Trending Books</h2>
+    <div class="books">
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10567969-L.jpg" alt="Book Cover">
+        <div class="status not-in-library">Not in Library</div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8231996-L.jpg" alt="Book Cover">
+        <div class="status checked-out">Checked Out</div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10552526-L.jpg" alt="Book Cover">
+        <div class="status not-in-library">Not in Library</div>
+      </div>
+      <!-- Add more books here -->
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
