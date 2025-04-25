@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Books & Reading Log</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .log-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .log-container input {
+      padding: 10px;
+      width: 75%;
+      font-size: 16px;
+    }
+    .log-container button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background: #2196F3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    ul#bookList {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+    ul#bookList li {
+      padding: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 My Library</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="my-books.html">My Books</a>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="log-container">
+      <h2>📘 Favorite Books & Reading Log</h2>
+      <input type="text" id="bookInput" placeholder="Enter book title">
+      <button onclick="addBook()">Add</button>
+      <ul id="bookList"></ul>
+    </div>
+  </main>
+
+  <script>
+    function addBook() {
+      const bookInput = document.getElementById('bookInput');
+      const title = bookInput.value.trim();
+      if (title === '') return;
+
+      const list = document.getElementById('bookList');
+      const li = document.createElement('li');
+      li.textContent = title;
+      list.appendChild(li);
+
+      // Save to local storage
+      const books = JSON.parse(localStorage.getItem('readingLog')) || [];
+      books.push(title);
+      localStorage.setItem('readingLog', JSON.stringify(books));
+
+      bookInput.value = '';
+    }
+
+    window.onload = () => {
+      const books = JSON.parse(localStorage.getItem('readingLog')) || [];
+      const list = document.getElementById('bookList');
+      books.forEach(title => {
+        const li = document.createElement('li');
+        li.textContent = title;
+        list.appendChild(li);
+      });
+    };
+  </script>
+</body>
+</html>
