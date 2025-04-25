@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Read Books Online</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .online-books {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px;
+    }
+    .book-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      width: 160px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .book-card img {
+      width: 100%;
+      height: auto;
+    }
+    .read-btn {
+      margin-top: 10px;
+      background: #4CAF50;
+      color: white;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 My Library</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="my-books.html">My Books</a>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="margin-left: 30px;">📖 Read Books Online</h2>
+    <div class="online-books">
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8231996-L.jpg" alt="Pride and Prejudice">
+        <p>Pride and Prejudice</p>
+        <a href="https://archive.org/details/prideprejudice00aust" class="read-btn" target="_blank">Read Now</a>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8228691-L.jpg" alt="Frankenstein">
+        <p>Frankenstein</p>
+        <a href="https://archive.org/details/frankenstein00shel" class="read-btn" target="_blank">Read Now</a>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8311832-L.jpg" alt="Moby Dick">
+        <p>Moby Dick</p>
+        <a href="https://archive.org/details/mobydick00melv" class="read-btn" target="_blank">Read Now</a>
+      </div>
+    </div>
+  </main>
+<script src="script.js"></script>
+
+</body>
+</html>
