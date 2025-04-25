@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 My Library</h1>
+    <nav>
+      <a href="h.html">Home</a>
+      <a href="my-books.html">My Books</a>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="features">
+      <div class="card"><h3>📖 Read Books Online</h3><p>Access thousands of books online anytime.</p></div>
+      <div class="card"><h3>📅 Yearly Reading Goal</h3><p>Track your reading journey and set goals.</p></div>
+      <div class="card"><h3>📚 Favorite Books</h3><p>Organize your books and keep a reading log.</p></div>
+    </section>
+
+    <h2 class="trending-title">🔥 Trending Books</h2>
+    <section class="book-list">
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/12491822-L.jpg" alt="A Whisper of Life">
+        <p>GLORIA COOK</p>
+        <div class="status not-in-library">Not in Library</div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10909258-L.jpg" alt="Unknown Book">
+        <p>Unknown</p>
+        <div class="status checked-out">Checked Out</div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/12714969-L.jpg" alt="O Livro dos Médiuns">
+        <p>Allan Kardec</p>
+        <div class="status not-in-library">Not in Library</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
